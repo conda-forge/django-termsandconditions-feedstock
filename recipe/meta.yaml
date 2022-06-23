@@ -1,5 +1,5 @@
 {% set name = "django-termsandconditions" %}
-{% set version = "2.0.9" %}
+{% set version = "2.0.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dfc8d8489d0749b7d5abc727f5c6293ea13dd753fc79daee650e4024f779d596
+  sha256: f9bf4cb8c3e3a4e65410789f99f3a4f33a055b10a4ba032af42e40d676bc0f08
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
@@ -36,7 +36,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'A Django app for adding Terms and Conditions workflows to Django sites.'
+  summary: A Django app for adding Terms and Conditions workflows to Django sites.
   description: |
     Django Terms and Conditions gives you an configurable way to send
     users to a T&C acceptance page before they can access the site.
