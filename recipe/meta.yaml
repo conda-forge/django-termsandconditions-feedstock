@@ -10,7 +10,7 @@ source:
   sha256: f9bf4cb8c3e3a4e65410789f99f3a4f33a055b10a4ba032af42e40d676bc0f08
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
@@ -21,7 +21,7 @@ requirements:
     - poetry
   run:
     - python >=3.6
-    - django >=2.2,<4
+    - django >=2.2
 
 test:
   imports:
