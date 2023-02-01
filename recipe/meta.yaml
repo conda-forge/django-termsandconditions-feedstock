@@ -1,16 +1,16 @@
 {% set name = "django-termsandconditions" %}
-{% set version = "2.0.10" %}
+{% set version = "2.0.12" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f9bf4cb8c3e3a4e65410789f99f3a4f33a055b10a4ba032af42e40d676bc0f08
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: c6f38073e3b6a227eff69663d6ca93256b33452cb9593693ffc70d21dc43ea85
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
