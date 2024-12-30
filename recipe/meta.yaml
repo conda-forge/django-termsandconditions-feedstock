@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: c6f38073e3b6a227eff69663d6ca93256b33452cb9593693ffc70d21dc43ea85
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - poetry
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - django >=2.2
 
 test:
@@ -28,6 +28,7 @@ test:
     - termsandconditions
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
